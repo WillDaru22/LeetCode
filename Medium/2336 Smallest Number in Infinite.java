@@ -14,17 +14,13 @@ class SmallestInfiniteSet {
         if(minAdded.isEmpty() == false) {
             return minAdded.poll();
         }
-        else {
-            current += 1;
-            return current-1;
-        }
+        return current++;
     }
     
     public void addBack(int num) {
-        if(current <= num || minAdded.contains(num)) {
-            return;
+        if(current > num && !minAdded.contains(num)) {
+            minAdded.add(num);
         }
-        minAdded.add(num);
     }
 }
 
