@@ -11,10 +11,10 @@ class SmallestInfiniteSet {
     }
     
     public int popSmallest() {
-        if(minAdded.isEmpty() == false) {
-            return minAdded.poll();
+        if(minAdded.isEmpty()) {
+            return current++;
         }
-        return current++;
+        return minAdded.poll();  // return and remove the front item
     }
     
     public void addBack(int num) {
